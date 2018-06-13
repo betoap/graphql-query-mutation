@@ -1,11 +1,11 @@
-export class MutationClass {
+export class Mutation {
 
-    private static _instance: MutationClass;
+    private static _instance: Mutation;
     private mutations: Object = {};
 
-    public static getInstance (): MutationClass {
+    public static getInstance (): Mutation {
         if ( !this._instance ) {
-            this._instance = new MutationClass( );
+            this._instance = new Mutation( );
         };
         return this._instance;
     }
@@ -14,7 +14,7 @@ export class MutationClass {
         this.mutations[key] = func;
     }
 
-    public getMutationClasss (): Object{
+    public getMutations (): Object{
         return {
             Mutation: this.mutations
         };

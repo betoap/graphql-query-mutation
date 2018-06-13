@@ -1,11 +1,11 @@
-export class QueryClass {
+export class Query {
 
-    private static _instance: QueryClass;
+    private static _instance: Query;
     private queries: Object = {};
 
-    public static getInstance (): QueryClass {
+    public static getInstance (): Query {
         if ( !this._instance ) {
-            this._instance = new QueryClass( );
+            this._instance = new Query( );
         };
         return this._instance;
     }

@@ -1,6 +1,5 @@
-import { MutationClass } from './classes/mutation';
-import { QueryClass } from './classes/query';
-export const Query: QueryClass = QueryClass.getInstance();
-export const Mutation: MutationClass = MutationClass.getInstance();
+import { Mutation as _Mutation } from './classes/mutation';
+import { Query as _Query } from './classes/query';
 
-console.log(Query, Mutation);
+export const Query: _Query = _Query.getInstance();
+export const Mutation: _Mutation = _Mutation.getInstance();

@@ -15,8 +15,6 @@ export class Query {
     }
 
     public getQueries (): Object{
-        return {
-            Query: this.queries
-        };
+        return this.queries;
     }
 }

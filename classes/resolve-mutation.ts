@@ -1,11 +1,11 @@
-export class Mutation {
+export class ResolveMutation {
 
-    private static _instance: Mutation;
+    private static _instance: ResolveMutation;
     private mutations: Object = {};
 
-    public static getInstance (): Mutation {
+    public static getInstance (): ResolveMutation {
         if ( !this._instance ) {
-            this._instance = new Mutation( );
+            this._instance = new ResolveMutation( );
         };
         return this._instance;
     }
@@ -14,7 +14,7 @@ export class Mutation {
         this.mutations[key] = func;
     }
 
-    public getMutations (): Object{
+    public getResolveMutations (): Object{
         return this.mutations;
     }
 }

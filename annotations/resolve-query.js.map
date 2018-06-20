@@ -1,0 +1,1 @@
+{"version":3,"file":"resolve-query.js","sourceRoot":"","sources":["../src/annotations/resolve-query.ts"],"names":[],"mappings":";;AAAA,8DAA0D;AAE1D,sBAA6B,MAAW,EAAE,GAAW,EAAE,UAAe;IAClE,IAAI,cAAc,GAAG,UAAU,CAAC,KAAK,CAAC;IACtC,4BAAY,CAAC,WAAW,EAAE,CAAC,MAAM,CAAC,GAAG,EAAE,cAAc,CAAC,CAAC;IACvD,OAAO,UAAU,CAAC;AACtB,CAAC;AAJD,oCAIC"}

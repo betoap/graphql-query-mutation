@@ -1,0 +1,1 @@
+{"version":3,"file":"mutation.js","sourceRoot":"","sources":["../src/annotations/mutation.ts"],"names":[],"mappings":";;AAAA,oDAAiD;AAEjD,kBAAyB,MAAW,EAAE,GAAW,EAAE,UAAe;IAC9D,IAAI,cAAc,GAAG,UAAU,CAAC,KAAK,CAAC;IACtC,mBAAQ,CAAC,WAAW,EAAE,CAAC,MAAM,CAAC,GAAG,EAAE,cAAc,CAAC,CAAC;IACnD,OAAO,UAAU,CAAC;AACtB,CAAC;AAJD,4BAIC"}

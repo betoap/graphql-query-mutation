@@ -1,0 +1,1 @@
+{"version":3,"file":"resolve-mutation.js","sourceRoot":"","sources":["../src/annotations/resolve-mutation.ts"],"names":[],"mappings":";;AAAA,oEAAgE;AAEhE,yBAAgC,MAAW,EAAE,GAAW,EAAE,UAAe;IACrE,IAAI,cAAc,GAAG,UAAU,CAAC,KAAK,CAAC;IACtC,kCAAe,CAAC,WAAW,EAAE,CAAC,MAAM,CAAC,GAAG,EAAE,cAAc,CAAC,CAAC;IAC1D,OAAO,UAAU,CAAC;AACtB,CAAC;AAJD,0CAIC"}

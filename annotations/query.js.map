@@ -1,0 +1,1 @@
+{"version":3,"file":"query.js","sourceRoot":"","sources":["../src/annotations/query.ts"],"names":[],"mappings":";;AAAA,4CAAyC;AAEzC,eAAsB,MAAW,EAAE,GAAW,EAAE,UAAe;IAC3D,IAAI,cAAc,GAAG,UAAU,CAAC,KAAK,CAAC;IACtC,aAAK,CAAC,WAAW,EAAE,CAAC,MAAM,CAAC,GAAG,EAAE,cAAc,CAAC,CAAC;IAChD,OAAO,UAAU,CAAC;AACtB,CAAC;AAJD,sBAIC"}

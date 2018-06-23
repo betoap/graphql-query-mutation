@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class Type {
     constructor() {
-        this.types = {};
+        this.types = '';
     }
     static getInstance() {
         if (!this._instance) {
@@ -12,7 +12,7 @@ class Type {
         return this._instance;
     }
     append(key, func) {
-        this.types[key] = func;
+        this.types += `${func};`;
     }
     getTypes() {
         return this.types;

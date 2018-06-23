@@ -7,4 +7,4 @@ function type(target, key, descriptor) {
     return descriptor;
 }
 exports.type = type;
-//# sourceMappingURL=type.js.map
+//# sourceMappingURL=type.1.js.map

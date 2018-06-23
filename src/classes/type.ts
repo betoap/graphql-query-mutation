@@ -1,7 +1,7 @@
 export class Type {
 
     private static _instance: Type;
-    private types: Object = {};
+    private types: string = '';
 
     public static getInstance (): Type {
         if ( !this._instance ) {
@@ -10,8 +10,8 @@ export class Type {
         return this._instance;
     }
 
-    public append( key: string, func: Function ): void {
-        this.types[key] = func;
+    public append( key: string, func: string ): void {
+        this.types += `${func};`;
     }
 
     public getTypes (): Object{

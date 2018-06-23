@@ -1,10 +1,10 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const type_1 = require("./../classes/type");
-function type(target, key, descriptor) {
+function input(target, key, descriptor) {
     var originalMethod = descriptor.value;
-    type_1.Type.getInstance().append(key, originalMethod());
+    type_1.Type.getInstance().append(key, `input ${key} ${originalMethod()}`);
     return descriptor;
 }
-exports.type = type;
-//# sourceMappingURL=type.js.map
+exports.input = input;
+//# sourceMappingURL=input.js.map

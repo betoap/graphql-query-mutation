@@ -1,0 +1,1 @@
+{"version":3,"file":"resolve-trivial.js","sourceRoot":"","sources":["../src/annotations/resolve-trivial.ts"],"names":[],"mappings":";;AAAA,kEAA8D;AAE9D,wBAA+B,MAAW,EAAE,GAAW,EAAE,UAAe;IACpE,IAAI,cAAc,GAAG,UAAU,CAAC,KAAK,CAAC;IACtC,gCAAc,CAAC,WAAW,EAAE,CAAC,MAAM,CAAC,MAAM,CAAC,WAAW,CAAC,IAAI,CAAC,WAAW,EAAE,EAAE,GAAG,EAAE,cAAc,CAAC,CAAC;IAChG,OAAO,UAAU,CAAC;AACtB,CAAC;AAJD,wCAIC"}

@@ -70,6 +70,14 @@ class Test {
         const id = parseInt(params.id);
         return this.u[id];
     }
+    post(parent, params, context, info) {
+        const id = parseInt(params.id);
+        return this.u[id];
+    }
+    comments(parent, params, context, info) {
+        const id = parseInt(params.id);
+        return this.u[id];
+    }
 }
 __decorate([
     annotations_1.type,
@@ -125,10 +133,23 @@ __decorate([
     __metadata("design:paramtypes", [Object, Object, Object, Object]),
     __metadata("design:returntype", void 0)
 ], Test.prototype, "updateUser", null);
+__decorate([
+    annotations_1.resolveTrivial,
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object, Object, Object]),
+    __metadata("design:returntype", void 0)
+], Test.prototype, "post", null);
+__decorate([
+    annotations_1.resolveTrivial,
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object, Object, Object]),
+    __metadata("design:returntype", void 0)
+], Test.prototype, "comments", null);
 var types = index_1.Type.getTypes();
 var querys = index_1.Query.getQueries();
 var mutations = index_1.Mutation.getMutations();
 var rquerys = index_1.ResolveQuery.getResolveQuerys();
 var rmutations = index_1.ResolveMutation.getResolveMutations();
-console.log(types, querys, mutations, rquerys, rmutations);
+var rtrivials = index_1.ResolveTrivial.getResolveTrivials();
+console.log(types, querys, mutations, rquerys, rmutations, rtrivials);
 //# sourceMappingURL=test.js.map

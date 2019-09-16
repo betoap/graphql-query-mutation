@@ -1,5 +1,5 @@
-import { type, input, query, mutation, resolveQuery, resolveMutation } from './annotations';
-import { Type, Query, Mutation, ResolveQuery, ResolveMutation } from './index';
+import { type, input, query, mutation, resolveQuery, resolveMutation, resolveTrivial } from './annotations';
+import { Type, Query, Mutation, ResolveQuery, ResolveMutation, ResolveTrivial } from './index';
 
 class Test {
 
@@ -85,6 +85,18 @@ class Test {
         const id:number = parseInt( params.id );
         return this.u[id];
     }
+
+    @resolveTrivial
+    post( parent, params, context, info ){
+        const id:number = parseInt( params.id );
+        return this.u[id];
+    }
+
+    @resolveTrivial
+    comments( parent, params, context, info ){
+        const id:number = parseInt( params.id );
+        return this.u[id];
+    }
 }
 
 
@@ -93,11 +105,13 @@ var querys = Query.getQueries();
 var mutations = Mutation.getMutations();
 var rquerys = ResolveQuery.getResolveQuerys();
 var rmutations = ResolveMutation.getResolveMutations();
+var rtrivials = ResolveTrivial.getResolveTrivials();
 
 console.log(
     types,
     querys,
     mutations,
     rquerys,
-    rmutations
+    rmutations,
+    rtrivials
 );

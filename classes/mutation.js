@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class Mutation {
     constructor() {
-        this.mutations = {};
+        this.mutations = '';
     }
     static getInstance() {
         if (!this._instance) {
@@ -11,11 +11,14 @@ class Mutation {
         ;
         return this._instance;
     }
-    append(key, func) {
-        this.mutations[key] = func;
+    append(func) {
+        this.mutations += func;
     }
     getMutations() {
-        return this.mutations;
+        return `
+        type Mutation {
+            ${this.mutations}
+        }`;
     }
 }
 exports.Mutation = Mutation;

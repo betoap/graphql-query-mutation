@@ -1,7 +1,7 @@
 export class Mutation {
 
     private static _instance: Mutation;
-    private mutations: Object = {};
+    private mutations: string = '';
 
     public static getInstance (): Mutation {
         if ( !this._instance ) {
@@ -10,11 +10,14 @@ export class Mutation {
         return this._instance;
     }
 
-    public append( key: string, func: Function ): void {
-        this.mutations[key] = func;
+    public append( func: Function ): void {
+        this.mutations += func;
     }
 
-    public getMutations (): Object{
-        return this.mutations;
+    public getMutations (): string{
+        return `
+        type Mutation {
+            ${this.mutations}
+        }`;
     }
 }

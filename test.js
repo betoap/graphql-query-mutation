@@ -20,11 +20,14 @@ class Test {
             { id: 4, name: "annotation" }
         ];
     }
-    _user() {
+    User() {
         return `
-            User {
+            {
                 id: ID!
                 name: String!
+                email: String!
+                createAt: String!
+                updateAt: String!
             }
         `;
     }
@@ -44,6 +47,7 @@ class Test {
         return `
             {
                 name: String!
+                email: String!
             }
         `;
     }
@@ -51,6 +55,7 @@ class Test {
         return `
             {
                 name: String!
+                email: String!
             }
         `;
     }
@@ -84,7 +89,7 @@ __decorate([
     __metadata("design:type", Function),
     __metadata("design:paramtypes", []),
     __metadata("design:returntype", String)
-], Test.prototype, "_user", null);
+], Test.prototype, "User", null);
 __decorate([
     annotations_1.query,
     __metadata("design:type", Function),
@@ -145,11 +150,149 @@ __decorate([
     __metadata("design:paramtypes", [Object, Object, Object, Object]),
     __metadata("design:returntype", void 0)
 ], Test.prototype, "comments", null);
+class RoleGraphql {
+    constructor() {
+        this.u = [
+            { id: 1, name: "node" },
+            { id: 2, name: "typescript" },
+            { id: 3, name: "graphql" },
+            { id: 4, name: "annotation" }
+        ];
+    }
+    Role() {
+        return `
+            {
+                id: ID!
+                name: String!
+                email: String!
+                createAt: String!
+                updateAt: String!
+            }
+        `;
+    }
+    queries() {
+        return `
+            roles( first: Int, offset: Int ): [ Role! ]!
+            role( id: ID! ): Role
+        `;
+    }
+    mutation() {
+        return `
+            createRole( input: RoleCreateInput! ): Role
+            updateRole( id: ID!, input: RoleUpdateInput! ): Role
+        `;
+    }
+    RoleCreateInput() {
+        return `
+            {
+                name: String!
+            }
+        `;
+    }
+    RoleUpdateInput() {
+        return `
+            {
+                name: String!
+            }
+        `;
+    }
+    roles(parent, params, context, info) {
+        return this.u;
+    }
+    ;
+    role(parent, params, context, info) {
+        const id = parseInt(params.id);
+        return this.u[id];
+    }
+    createRole(parent, params, context, info) {
+        const id = parseInt(params.id);
+        return this.u[id];
+    }
+    updateRole(parent, params, context, info) {
+        const id = parseInt(params.id);
+        return this.u[id];
+    }
+    post(parent, params, context, info) {
+        const id = parseInt(params.id);
+        return this.u[id];
+    }
+    comments(parent, params, context, info) {
+        const id = parseInt(params.id);
+        return this.u[id];
+    }
+}
+__decorate([
+    annotations_1.type,
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], RoleGraphql.prototype, "Role", null);
+__decorate([
+    annotations_1.query,
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], RoleGraphql.prototype, "queries", null);
+__decorate([
+    annotations_1.mutation,
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], RoleGraphql.prototype, "mutation", null);
+__decorate([
+    annotations_1.input,
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], RoleGraphql.prototype, "RoleCreateInput", null);
+__decorate([
+    annotations_1.input,
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", []),
+    __metadata("design:returntype", String)
+], RoleGraphql.prototype, "RoleUpdateInput", null);
+__decorate([
+    annotations_1.resolveQuery,
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object, Object, Object]),
+    __metadata("design:returntype", void 0)
+], RoleGraphql.prototype, "roles", null);
+__decorate([
+    annotations_1.resolveQuery,
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object, Object, Object]),
+    __metadata("design:returntype", void 0)
+], RoleGraphql.prototype, "role", null);
+__decorate([
+    annotations_1.resolveMutation,
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object, Object, Object]),
+    __metadata("design:returntype", void 0)
+], RoleGraphql.prototype, "createRole", null);
+__decorate([
+    annotations_1.resolveMutation,
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object, Object, Object]),
+    __metadata("design:returntype", void 0)
+], RoleGraphql.prototype, "updateRole", null);
+__decorate([
+    annotations_1.resolveTrivial,
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object, Object, Object]),
+    __metadata("design:returntype", void 0)
+], RoleGraphql.prototype, "post", null);
+__decorate([
+    annotations_1.resolveTrivial,
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [Object, Object, Object, Object]),
+    __metadata("design:returntype", void 0)
+], RoleGraphql.prototype, "comments", null);
+exports.RoleGraphql = RoleGraphql;
 var types = index_1.Type.getTypes();
 var querys = index_1.Query.getQueries();
 var mutations = index_1.Mutation.getMutations();
 var rquerys = index_1.ResolveQuery.getResolveQuerys();
 var rmutations = index_1.ResolveMutation.getResolveMutations();
 var rtrivials = index_1.ResolveTrivial.getResolveTrivials();
-console.log(types, querys, mutations, rquerys, rmutations, rtrivials);
+console.log(types, querys, mutations, rquerys, rmutations, rtrivials, index_1.Schema, index_1.Resolves);
 //# sourceMappingURL=test.js.map

@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 class Query {
     constructor() {
-        this.queries = {};
+        this.queries = '';
     }
     static getInstance() {
         if (!this._instance) {
@@ -11,11 +11,15 @@ class Query {
         ;
         return this._instance;
     }
-    append(key, func) {
-        this.queries[key] = func;
+    append(func) {
+        this.queries += func;
     }
     getQueries() {
-        return this.queries;
+        return `
+            type Query {
+                ${this.queries}
+            }
+        `;
     }
 }
 exports.Query = Query;

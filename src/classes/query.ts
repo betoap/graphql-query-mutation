@@ -1,7 +1,7 @@
 export class Query {
 
     private static _instance: Query;
-    private queries: Object = {};
+    private queries: string = '';
 
     public static getInstance (): Query {
         if ( !this._instance ) {
@@ -10,11 +10,15 @@ export class Query {
         return this._instance;
     }
 
-    public append( key: string, func: Function ): void {
-        this.queries[key] = func;
+    public append( func: Function ): void {
+        this.queries += func;
     }
 
-    public getQueries (): Object{
-        return this.queries;
+    public getQueries (): string{
+        return  `
+            type Query {
+                ${this.queries}
+            }
+        `;
     }
 }

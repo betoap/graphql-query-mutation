@@ -11,6 +11,7 @@ export class ResolveTrivial {
     }
 
     public append(object: any, key: string, func: Function ): void {
+        if( !this.trivial[object] ) this.trivial[object] = {};
         this.trivial[object] = { ...this.trivial[object], [key]: func };
     }
 

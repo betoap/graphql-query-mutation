@@ -12,6 +12,8 @@ class ResolveTrivial {
         return this._instance;
     }
     append(object, key, func) {
+        if (!this.trivial[object])
+            this.trivial[object] = {};
         this.trivial[object] = Object.assign({}, this.trivial[object], { [key]: func });
     }
     getResolveTrivials() {

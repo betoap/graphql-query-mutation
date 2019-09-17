@@ -1,3 +1,4 @@
+import { IResolvers, IResolverObject } from 'graphql-tools';
 import { Type as _Type } from './classes/type';
 import { Query as _Query } from './classes/query';
 import { Mutation as _Mutation } from './classes/mutation';
@@ -11,3 +12,14 @@ export const Mutation: _Mutation = _Mutation.getInstance();
 export const ResolveQuery: _ResolveQuery = _ResolveQuery.getInstance();
 export const ResolveMutation: _ResolveMutation = _ResolveMutation.getInstance();
 export const ResolveTrivial: _ResolveTrivial = _ResolveTrivial.getInstance();
+
+export const Schema = `
+    type Schema {
+        query: Query
+        mutation: Mutation
+    }
+`;
+export const Resolves:IResolvers<any, any> =  {
+    "Query": (<IResolverObject>ResolveQuery.getResolveQuerys()),
+    "Mutation": (<IResolverObject>ResolveMutation.getResolveMutations()),
+}

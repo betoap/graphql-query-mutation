@@ -1,5 +1,5 @@
 import { type, input, query, mutation, resolveQuery, resolveMutation, resolveTrivial } from './annotations';
-import { Type, Query, Mutation, ResolveQuery, ResolveMutation, ResolveTrivial } from './index';
+import { Type, Query, Mutation, ResolveQuery, ResolveMutation, ResolveTrivial, Schema, Resolves } from './index';
 
 class Test {
 
@@ -14,11 +14,14 @@ class Test {
      * user
      */
     @type
-    public _user():string {
+    public User():string {
         return `
-            User {
+            {
                 id: ID!
                 name: String!
+                email: String!
+                createAt: String!
+                updateAt: String!
             }
         `;
     }
@@ -47,6 +50,7 @@ class Test {
         return `
             {
                 name: String!
+                email: String!
             }
         `;
     }
@@ -59,6 +63,7 @@ class Test {
         return `
             {
                 name: String!
+                email: String!
             }
         `;
     }
@@ -100,6 +105,110 @@ class Test {
 }
 
 
+
+
+
+
+
+
+
+
+export class RoleGraphql {
+
+    private readonly u:Array<any> = [
+        { id: 1, name: "node" },
+        { id: 2, name: "typescript" },
+        { id: 3, name: "graphql" },
+        { id: 4, name: "annotation" }
+    ];
+
+    @type
+    public Role():string {
+        return `
+            {
+                id: ID!
+                name: String!
+                email: String!
+                createAt: String!
+                updateAt: String!
+            }
+        `;
+    }
+    
+    @query
+    queries(): string {
+        return `
+            roles( first: Int, offset: Int ): [ Role! ]!
+            role( id: ID! ): Role
+        `;
+    }
+
+    @mutation
+    mutation(): string {
+        return `
+            createRole( input: RoleCreateInput! ): Role
+            updateRole( id: ID!, input: RoleUpdateInput! ): Role
+        `;
+    }
+
+    @input
+     public RoleCreateInput(): string {
+        return `
+            {
+                name: String!
+            }
+        `;
+    }
+
+    @input
+    public RoleUpdateInput(): string {
+        return `
+            {
+                name: String!
+            }
+        `;
+    }
+
+    @resolveQuery
+    roles ( parent, params, context, info ) {
+        return this.u;
+    };
+
+    @resolveQuery
+    role ( parent, params, context, info ) {
+        const id:number = parseInt( params.id );
+        return this.u[id];
+    }
+
+    @resolveMutation
+    createRole( parent, params, context, info ) {
+        const id:number = parseInt( params.id );
+        return this.u[id];
+    }
+
+    @resolveMutation
+    updateRole( parent, params, context, info ) {
+        const id:number = parseInt( params.id );
+        return this.u[id];
+    }
+
+    @resolveTrivial
+    post( parent, params, context, info ){
+        const id:number = parseInt( params.id );
+        return this.u[id];
+    }
+
+    @resolveTrivial
+    comments( parent, params, context, info ){
+        const id:number = parseInt( params.id );
+        return this.u[id];
+    }
+}
+
+
+
+
+
 var types = Type.getTypes();
 var querys = Query.getQueries();
 var mutations = Mutation.getMutations();
@@ -113,5 +222,7 @@ console.log(
     mutations,
     rquerys,
     rmutations,
-    rtrivials
+    rtrivials,
+    Schema,
+    Resolves
 );

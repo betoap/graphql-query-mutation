@@ -12,4 +12,14 @@ exports.Mutation = mutation_1.Mutation.getInstance();
 exports.ResolveQuery = resolve_query_1.ResolveQuery.getInstance();
 exports.ResolveMutation = resolve_mutation_1.ResolveMutation.getInstance();
 exports.ResolveTrivial = resolve_trivial_1.ResolveTrivial.getInstance();
+exports.Schema = `
+    type Schema {
+        query: Query
+        mutation: Mutation
+    }
+`;
+exports.Resolves = {
+    "Query": exports.ResolveQuery.getResolveQuerys(),
+    "Mutation": exports.ResolveMutation.getResolveMutations(),
+};
 //# sourceMappingURL=index.js.map

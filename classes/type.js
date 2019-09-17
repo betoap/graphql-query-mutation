@@ -11,8 +11,8 @@ class Type {
         ;
         return this._instance;
     }
-    append(key, func) {
-        this.types += `${func};`;
+    append(func) {
+        this.types += func;
     }
     getTypes() {
         return this.types;
